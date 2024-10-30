@@ -9,7 +9,8 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use('/api', routes);
+const crudRoutes = require('./routes/crud');
+app.use('/api/items', crudRoutes);
 
 const port = process.env.BACKEND_PORT || 3000;
 app.listen(port, () => {
